@@ -1,0 +1,57 @@
+# Afficher les nombres de 1 à 1000 avec une boucle while
+i: int = 0
+while i < 1000:
+    i = i + 1
+    print(i)
+
+# créer un tableau de int avec 50 cases
+
+tab_int: list[int] = [""]
+tab_int *= 50
+print(len(tab_int))
+
+# mettre chaque case à la valeur 5 avec un while
+i: int = 0
+while i < len(tab_int):
+    tab_int[i] = 5
+    print(tab_int[i])
+    i = i + 1
+
+# ajouter 12 à chaque cases avec un while
+i: int = 0
+while i < len(tab_int):
+    tab_int[i] += 12
+    print(tab_int[i])
+    print("exo3")
+    i = i + 1
+
+# afficher le tableau avec un while
+i: int = 0
+while i < len(tab_int):
+    print(tab_int[i])
+    i += 1
+
+
+#chercher si la variable "answer" est dans la liste de mot autorisée
+
+def AskInput(message: str, authorized_inputs: list[str]) -> str:
+    i: int = 0
+    while i < len(authorized_inputs):
+        if message == authorized_inputs[i]:
+            return authorized_inputs[i]
+        i += 1
+        if i == len(authorized_inputs):
+            print("ahhhhhh")
+            authorized_inputs = "not valid word"
+            break
+
+authorized_answers: list[str] = ["pierre", "feuille", "ciseaux"]
+
+while True:
+    answer: str = input("saisir un mot")
+    authorized_input: str = (AskInput(answer, authorized_answers))
+    if authorized_input:
+        break
+
+    #print OK
+    #print NOT OK
